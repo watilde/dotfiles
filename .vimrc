@@ -68,11 +68,13 @@ set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=[%
 else
 set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %f%=[%{GetB()}]\ %l,%c%V%8P
 endif
+" ステータスラインのカラー
+highlight StatusLine ctermfg=green ctermbg=black
 "入力モード時、ステータスラインのカラーを変更
 augroup InsertHook
 autocmd!
-autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
-autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+autocmd InsertEnter * highlight StatusLine ctermfg=lightblue ctermbg=black
+autocmd InsertLeave * highlight StatusLine ctermfg=green ctermbg=black
 augroup END
 function! GetB()
 let c = matchstr(getline('.'), '.', col('.') - 1)
@@ -111,8 +113,9 @@ set list " 不可視文字表示
 set listchars=tab:>.,trail:_,extends:>,precedes:< " 不可視文字の表示形式
 set display=uhex " 印字不可能文字を16進数で表示
 " 全角スペースの表示
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+highlight link ZenkakuSpace Error
 match ZenkakuSpace /　/
+
 " カーソル行をハイライト
 set cursorline
 syntax on
