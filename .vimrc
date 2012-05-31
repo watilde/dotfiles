@@ -11,7 +11,9 @@ endif
 filetype plugin on
 filetype indent on
 
+"
 " Bundle
+"
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 
@@ -20,7 +22,7 @@ NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 "
 let g:unite_enable_start_insert=1       " Insert Mode at starting
 let g:unite_enable_split_vertically = 1 " Split Vertically
-"buffer一覧
+" buffer一覧
 noremap <C-U><C-B> :Unite buffer<CR>
 " ファイル一覧
 noremap <C-U><C-F> :Unite file<CR>
@@ -30,8 +32,14 @@ noremap <C-U><C-R> :Unite file_mru<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+"
 " neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+" 起動時に有効
+let g:neocomplcache_enable_at_startup = 1
+" ポップアップメニューで表示される候補の数。初期値は100
+let g:neocomplcache_max_list = 20
+" 自動補完を行う入力数を設定。初期値は2
+let g:neocomplcache_auto_completion_start_length = 2
 
 "
 " 基本設定
