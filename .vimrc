@@ -81,7 +81,7 @@ highlight StatusLine ctermfg=green ctermbg=black
 "入力モード時、ステータスラインのカラーを変更
 augroup InsertHook
 autocmd!
-autocmd InsertEnter * highlight StatusLine ctermfg=lightblue ctermbg=black
+autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=black
 autocmd InsertLeave * highlight StatusLine ctermfg=green ctermbg=black
 augroup END
 function! GetB()
@@ -139,10 +139,6 @@ if has("autocmd")
 filetype plugin on
 " そのファイルタイプにあわせたインデントを利用する
 filetype indent on
-" これらのftではインデントを無効に
-autocmd FileType php filetype indent off
-autocmd FileType html :set indentexpr=
-autocmd FileType xhtml :set indentexpr=
 endif
 
 "
