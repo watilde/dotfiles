@@ -134,6 +134,8 @@ syntax on
 set autoindent " 自動でインデント
 set paste " ペースト時にautoindentを無効に
 set smartindent " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする
+"set tabstop=4 " タブ表示幅
+"set shiftwidth=4 " インデント幅
 if has("autocmd")
 "ファイルタイプの検索を有効にする
 filetype plugin on
