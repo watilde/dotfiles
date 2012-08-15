@@ -1,5 +1,5 @@
 var dotfiles = (function (){
-	var shell = function shell(hyphenE){
+	var cmd = function cmd(hyphenE){
 		var proto = 'ls -a ./ | grep -v';
 		for(var i=0; i<hyphenE.length; i++){
 			proto += ' -e '+hyphenE[i];
@@ -17,7 +17,7 @@ var dotfiles = (function (){
 	    , child
 	    , grepList = ['"^\.$"','"^\.\.$"', '.git', 'setup.js'];
 
-	child = exec(shell(grepList),function(err, stdout, stderr){
+	return child = exec(cmd(grepList),function(err, stdout, stderr){
 		if(!err){
 			stdout = plastic(stdout);
 			return stdout;
@@ -27,4 +27,4 @@ var dotfiles = (function (){
 	});
 })();
 
-console.log("dotfiles:"+dotfiles);
+console.log("dotfiles: " + dotfiles);
