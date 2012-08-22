@@ -1,6 +1,6 @@
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #|--------|
 #|~その他~|
