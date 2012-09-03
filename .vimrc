@@ -2,14 +2,14 @@
 " neobundle init
 "
 set nocompatible
-filetype off
+filetype plugin indent off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/neobundle/neobundle.vim
+  set runtimepath+=~/.vim/neobundle/neobundle.vim.git/
   call neobundle#rc(expand('~/.vim/neobundle/'))
 endif
-filetype plugin on
-filetype indent on
+
+filetype plugin indent on
 
 "
 " Bundle
@@ -37,9 +37,9 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 " 起動時に有効
 let g:neocomplcache_enable_at_startup = 1
 " ポップアップメニューで表示される候補の数。初期値は100
-let g:neocomplcache_max_list = 20
+let g:neocomplcache_max_list = 10
 " 自動補完を行う入力数を設定。初期値は2
-let g:neocomplcache_auto_completion_start_length = 2
+let g:neocomplcache_auto_completion_start_length = 3
 
 "
 " 基本設定
