@@ -1,5 +1,6 @@
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH # Add NODEBREW to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #|--------|

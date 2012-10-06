@@ -16,11 +16,13 @@ filetype plugin indent on
 "
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/h1mesuke/vim-alignta.git'
 
 "
 " unite.vim
 "
-let g:unite_enable_start_insert=1       " Insert Mode at starting
+set modifiable
+"let g:unite_enable_start_insert    = 1 " Insert Mode at starting
 let g:unite_enable_split_vertically = 1 " Split Vertically
 " buffer一覧
 noremap <C-U><C-B> :Unite buffer<CR>
@@ -42,21 +44,29 @@ let g:neocomplcache_max_list = 10
 let g:neocomplcache_auto_completion_start_length = 3
 
 "
+" vim-alignta
+"
+noremap <C-A>= gg=G
+noremap <C-A><C-A> :Alignta
+noremap <C-A><C-H> :Alignta <-
+noremap <C-A><C-L> :Alignta ->
+
+"
 " 基本設定
 "
-set nocompatible " vi互換なし
-set scrolloff=5 " スクロール時の余白確保
-set nobackup " バックアップ取らない
-set autoread " 他で書き換えられたら自動で読み直す
-set noswapfile " スワップファイル作らない
-set hidden " 編集中でも他のファイルを開けるようにする
-set backspace=indent,eol,start " バックスペースでなんでも消せるように
-set formatoptions=lmoq " テキスト整形オプション，マルチバイト系を追加
-set vb t_vb= " ビープをならさない
-set whichwrap=b,s,h,l,<,>,[,] " カーソルを行頭、行末で止まらないようにする
-set showcmd " コマンドをステータス行に表示
-set showmode " 現在のモードを表示
-set modelines=0 " モードラインは無効
+set nocompatible		" vi互換なし
+set scrolloff=5			" スクロール時の余白確保
+set nobackup			" バックアップ取らない
+set autoread			" 他で書き換えられたら自動で読み直す
+set noswapfile			" スワップファイル作らない
+set hidden			" 編集中でも他のファイルを開けるようにする
+set backspace=indent,eol,start	" バックスペースでなんでも消せるように
+set formatoptions=lmoq		" テキスト整形オプション，マルチバイト系を追加
+set vb t_vb=			" ビープをならさない
+set whichwrap=b,s,h,l,<,>,[,]	" カーソルを行頭、行末で止まらないようにする
+set showcmd			" コマンドをステータス行に表示
+set showmode			" 現在のモードを表示
+set modelines=0			" モードラインは無効
 " ターミナルでマウスを使用できるようにする
 set mouse=a
 set guioptions+=a
