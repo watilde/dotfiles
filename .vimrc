@@ -5,7 +5,7 @@ set nocompatible
 filetype plugin indent off
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/neobundle/neobundle.vim.git/
+	set runtimepath+=~/.vim/neobundle.vim.git/
 	call neobundle#rc(expand('~/.vim/neobundle/'))
 endif
 
@@ -17,6 +17,7 @@ filetype plugin indent on
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/h1mesuke/vim-alignta.git'
+NeoBundle 'git://github.com/basyura/jslint.vim.git'
 
 "
 " unite.vim
@@ -36,20 +37,39 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 "
 " neocomplcache
+"
 " 起動時に有効
 let g:neocomplcache_enable_at_startup=1
 " ポップアップメニューで表示される候補の数。初期値は100
-let g:neocomplcache_max_list=10
+let g:neocomplcache_max_list=20
 " 自動補完を行う入力数を設定。初期値は3
-let g:neocomplcache_auto_completion_start_length=5
+let g:neocomplcache_auto_completion_start_length=2
+" 大文字が入力されるまで大文字小文字の区別を無視する
+let g:neocomplcache_enable_smart_case = 1
+" シンタックスをキャッシュするときの最小文字長
+let g:neocomplcache_min_syntax_length = 3
 
 "
 " vim-alignta as like indent
 "
-noremap <C-A>= gg=G
+noremap <C-A>= ggVG=<CR>
 noremap <C-A><C-A> :Alignta
 noremap <C-A><C-H> :Alignta <-
 noremap <C-A><C-L> :Alignta ->
+
+"
+" jslint.vim
+"
+" 保存時に実行
+augroup MyGroup
+	autocmd! MyGroup
+	autocmd FileType javascript call s:javascript_filetype_settings()
+augroup END
+function! s:javascript_filetype_settings()
+	autocmd BufLeave     <buffer> call jslint#clear()
+	autocmd BufWritePost <buffer> call jslint#check()
+	autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
 
 "
 " 基本設定
