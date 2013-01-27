@@ -27,9 +27,9 @@ NeoBundle 'leafgarland/typescript-vim.git'
 set modifiable
 "let g:unite_enable_start_insert=1    " Insert Mode at starting
 let g:unite_enable_split_vertically=1 " Split Vertically
-" buffer一覧
+" buffer list
 noremap <C-U><C-B> :Unite buffer<CR>
-" ファイル一覧
+" file list
 noremap <C-U><C-F> :Unite file<CR>
 " 最近使ったファイルの一覧
 noremap <C-U><C-R> :Unite file_mru<CR>
@@ -40,16 +40,33 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 "
 " neocomplcache
 "
-" 起動時に有効
-let g:neocomplcache_enable_at_startup=1
-" ポップアップメニューで表示される候補の数。初期値は100
-let g:neocomplcache_max_list=50
-" 自動補完を行う入力数を設定。初期値は3
-let g:neocomplcache_auto_completion_start_length=2
-" 大文字が入力されるまで大文字小文字の区別を無視する
+" Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
+let g:acp_enableAtStartup = 0
+" Launches neocomplcache automatically on vim startup.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underscore completion.
+let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
 let g:neocomplcache_min_syntax_length = 3
+" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Key-mappings.
+" <CR>: close popup and save indent.
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<C-h>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
 " Enable omni completion. Not required if they are already set elsewhere in .vimrc
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
