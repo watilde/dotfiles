@@ -57,8 +57,7 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<C-h>"
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
