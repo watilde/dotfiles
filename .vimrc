@@ -41,15 +41,28 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 " neocomplcache
 "
 " 起動時に有効
-"let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_at_startup=1
 " ポップアップメニューで表示される候補の数。初期値は100
-"let g:neocomplcache_max_list=20
+let g:neocomplcache_max_list=50
 " 自動補完を行う入力数を設定。初期値は3
-"let g:neocomplcache_auto_completion_start_length=2
+let g:neocomplcache_auto_completion_start_length=2
 " 大文字が入力されるまで大文字小文字の区別を無視する
-"let g:neocomplcache_enable_smart_case = 1
-" シンタックスをキャッシュするときの最小文字長
-"let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_enable_smart_case = 1
+" Sets minimum char length of syntax keyword.
+let g:neocomplcache_min_syntax_length = 3
+" Enable omni completion. Not required if they are already set elsewhere in .vimrc
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" Enable heavy omni completion, which require computational power and may stall the vim. 
+if !exists('g:neocomplcache_omni_patterns')
+	let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
 
 "
 " vim-alignta as like indent
@@ -166,7 +179,7 @@ syntax on
 " インデント
 "
 set autoindent    " 自動でインデント
-set paste         " ペースト時にautoindentを無効に
+"set paste         " ペースト時にautoindentを無効に
 set smartindent   " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする
 set tabstop=4    " タブ表示幅
 set shiftwidth=4 " インデント幅
