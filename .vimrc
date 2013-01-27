@@ -8,22 +8,24 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/neobundle.vim.git/
 	call neobundle#rc(expand('~/.vim/neobundle/'))
 endif
-
 filetype plugin indent on
 
 "
 " Bundle
 "
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/h1mesuke/vim-alignta.git'
-NeoBundle 'git://github.com/basyura/jslint.vim.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'h1mesuke/vim-alignta.git'
+NeoBundle 'basyura/jslint.vim.git'
+NeoBundle 'cakebaker/scss-syntax.vim.git'
+NeoBundle 'kchmck/vim-coffee-script.git'
+NeoBundle 'leafgarland/typescript-vim.git'
 
 "
 " unite.vim
 "
 set modifiable
-"let g:unite_enable_start_insert=1 " Insert Mode at starting
+"let g:unite_enable_start_insert=1    " Insert Mode at starting
 let g:unite_enable_split_vertically=1 " Split Vertically
 " buffer一覧
 noremap <C-U><C-B> :Unite buffer<CR>
@@ -39,15 +41,15 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 " neocomplcache
 "
 " 起動時に有効
-let g:neocomplcache_enable_at_startup=1
+"let g:neocomplcache_enable_at_startup=1
 " ポップアップメニューで表示される候補の数。初期値は100
-let g:neocomplcache_max_list=20
+"let g:neocomplcache_max_list=20
 " 自動補完を行う入力数を設定。初期値は3
-let g:neocomplcache_auto_completion_start_length=2
+"let g:neocomplcache_auto_completion_start_length=2
 " 大文字が入力されるまで大文字小文字の区別を無視する
-let g:neocomplcache_enable_smart_case = 1
+"let g:neocomplcache_enable_smart_case = 1
 " シンタックスをキャッシュするときの最小文字長
-let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_min_syntax_length = 3
 
 "
 " vim-alignta as like indent
@@ -74,6 +76,7 @@ endfunction
 "
 " 基本設定
 "
+set nowrap                     " 回り込みなし
 set nocompatible               " vi互換なし
 set scrolloff=5                " スクロール時の余白確保
 set nobackup                   " バックアップ取らない
@@ -97,7 +100,8 @@ filetype plugin on
 "
 " ステータスライン
 "
-set laststatus=2 " 常にステータスラインを表示
+" 常にステータスラインを表示
+set laststatus=2
 "カーソルが何行目の何列目に置かれているかを表示する
 set ruler
 "ステータスラインに文字コードと改行文字を表示する
@@ -164,8 +168,8 @@ syntax on
 set autoindent    " 自動でインデント
 set paste         " ペースト時にautoindentを無効に
 set smartindent   " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする
-"set tabstop=4    " タブ表示幅
-"set shiftwidth=4 " インデント幅
+set tabstop=4    " タブ表示幅
+set shiftwidth=4 " インデント幅
 if has("autocmd")
 	"ファイルタイプの検索を有効にする
 	filetype plugin on
@@ -176,8 +180,8 @@ endif
 "
 " エンコーディング
 "
-set ffs=unix,dos,mac " 改行文字
-set encoding=utf-8   " デフォルトエンコーディング
+"set ffs=unix,dos,mac " 改行文字
+"set encoding=utf-8   " デフォルトエンコーディング
 " 文字コード関連
 " from ずんWiki http://www.kawaz.jp/pukiwiki/?vim#content_1_7
 " 文字コードの自動認識
