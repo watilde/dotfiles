@@ -1,110 +1,70 @@
-"
-" neobundle init
-"
-set nocompatible
-filetype plugin indent off
-
+"" Neobundle init
+filetype plugin indent off " Required!
 if has('vim_starting')
-	set runtimepath+=~/.vim/neobundle.vim.git/
-	call neobundle#rc(expand('~/.vim/neobundle/'))
+	set nocompatible " Be iMproved
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-filetype plugin indent on
 
-"
-" Bundle
-"
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"" Unite.vim
 NeoBundle 'Shougo/unite.vim.git'
-NeoBundle 'Shougo/neocomplcache.git'
-NeoBundle 'h1mesuke/vim-alignta.git'
-NeoBundle 'basyura/jslint.vim.git'
-NeoBundle 'cakebaker/scss-syntax.vim.git'
-NeoBundle 'kchmck/vim-coffee-script.git'
-NeoBundle 'leafgarland/typescript-vim.git'
-
-"
-" unite.vim
-"
 set modifiable
-"let g:unite_enable_start_insert=1    " Insert Mode at starting
-let g:unite_enable_split_vertically=1 " Split Vertically
-" buffer list
+" Insert Mode at starting
+let g:unite_enable_start_insert=1
+" Split Vertically
+let g:unite_enable_split_vertically=1
+" Buffer list
 noremap <C-U><C-B> :Unite buffer<CR>
-" file list
+" File list
 noremap <C-U><C-F> :Unite file<CR>
-" 最近使ったファイルの一覧
+" Recent used file
 noremap <C-U><C-R> :Unite file_mru<CR>
-" ESCキーを2回押すと終了する
+" Press ESC twice to end
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-"
-" neocomplcache
-"
+"" Neocomplcache.vim
+NeoBundle 'Shougo/neocomplcache.vim.git'
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
-"let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
-"let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
-"let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
 " Use underscore completion.
-"let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
-"let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length = 3
 " buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 " Key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-"inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-" Enable omni completion. Not required if they are already set elsewhere in .vimrc
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" Enable heavy omni completion, which require computational power and may stall the vim. 
-if !exists('g:neocomplcache_omni_patterns')
-	let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-
-
-"
-" vim-alignta as like indent
-"
+"" vim-alignta as like indent
+NeoBundle 'h1mesuke/vim-alignta.git'
 noremap <C-A>= ggVG=<CR>
 noremap <C-A><C-A> :Alignta
 noremap <C-A><C-H> :Alignta <-
 noremap <C-A><C-L> :Alignta ->
 
-"
-" jslint.vim
-"
-" 保存時に実行
-augroup MyGroup
-	autocmd! MyGroup
-	autocmd FileType javascript call s:javascript_filetype_settings()
-augroup END
-function! s:javascript_filetype_settings()
-	autocmd BufLeave     <buffer> call jslint#clear()
-	autocmd BufWritePost <buffer> call jslint#check()
-	autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
+" Installation check.
+NeoBundleCheck
 
-"
-" 基本設定
-"
+"" 基本設定
 set nowrap                     " 回り込みなし
 set nocompatible               " vi互換なし
 set scrolloff=5                " スクロール時の余白確保
@@ -113,7 +73,8 @@ set autoread                   " 他で書き換えられたら自動で読み�
 set noswapfile                 " スワップファイル作らない
 set hidden                     " 編集中でも他のファイルを開けるようにする
 set backspace=indent,eol,start " バックスペースでなんでも消せるように
-set formatoptions=lmoq         " テキスト整形オプション，マルチバイト系を追加
+set formatoptions=lmoq         "
+" テキスト整形オプション，マルチバイト系を追加
 set vb t_vb=                   " ビープをならさない
 set whichwrap=b,s,h,l,<,>,[,]  " カーソルを行頭、行末で止まらないようにする
 set showcmd                    " コマンドをステータス行に表示
@@ -126,58 +87,7 @@ set ttymouse=xterm2
 " ファイルタイプ判定をon
 filetype plugin on
 
-"
-" ステータスライン
-"
-" 常にステータスラインを表示
-set laststatus=2
-"カーソルが何行目の何列目に置かれているかを表示する
-set ruler
-"ステータスラインに文字コードと改行文字を表示する
-if winwidth(0) >= 120
-	set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=[%{GetB()}]\ %l,%c%V%8P
-else
-	set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %f%=[%{GetB()}]\ %l,%c%V%8P
-endif
-" ステータスラインのカラー
-highlight StatusLine ctermfg=green ctermbg=black
-"入力モード時、ステータスラインのカラーを変更
-augroup InsertHook
-	autocmd!
-	autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=black
-	autocmd InsertLeave * highlight StatusLine ctermfg=green ctermbg=black
-augroup END
-function! GetB()
-	let c = matchstr(getline('.'), '.', col('.') - 1)
-	let c = iconv(c, &enc, &fenc)
-	return String2Hex(c)
-endfunction
-" help eval-examples
-" The function Nr2Hex() returns the Hex string of a number.
-func! Nr2Hex(nr)
-	let n = a:nr
-	let r = ""
-	while n
-		let r = '0123456789ABCDEF'[n % 16] . r
-		let n = n / 16
-	endwhile
-	return r
-endfunc
-" The function String2Hex() converts each character in a string to a two
-" character Hex string.
-func! String2Hex(str)
-	let out = ''
-	let ix = 0
-	while ix < strlen(a:str)
-		let out = out . Nr2Hex(char2nr(a:str[ix]))
-		let ix = ix + 1
-	endwhile
-	return out
-endfunc
-
-"
-" 表示
-"
+"" 表示
 set showmatch                                     " 括弧の対応をハイライト
 set number                                        " 行番号表示
 set list                                          " 不可視文字表示
@@ -186,16 +96,13 @@ set display=uhex                                  " 印字不可能文字を16�
 " 全角スペースの表示
 highlight link ZenkakuSpace Error
 match ZenkakuSpace /　/
-
 " カーソル行をハイライト
 set cursorline
 syntax on
 
-"
-" インデント
-"
+"" インデント
 set autoindent    " 自動でインデント
-"set paste         " ペースト時にautoindentを無効に
+" set paste         " ペースト時にautoindentを無効に
 set smartindent   " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする
 set tabstop=4    " タブ表示幅
 set shiftwidth=4 " インデント幅
@@ -206,11 +113,9 @@ if has("autocmd")
 	filetype indent on
 endif
 
-"
-" エンコーディング
-"
-"set ffs=unix,dos,mac " 改行文字
-"set encoding=utf-8   " デフォルトエンコーディング
+"" エンコーディング
+set ffs=unix " 改行文字
+set encoding=utf-8   " デフォルトエンコーディング
 " 文字コード関連
 " from ずんWiki http://www.kawaz.jp/pukiwiki/?vim#content_1_7
 " 文字コードの自動認識
@@ -288,3 +193,50 @@ command! Iso2022jp edit ++enc=iso-2022-jp
 command! Utf8 edit ++enc=utf-8
 command! Jis Iso2022jp
 command! Sjis Cp932
+
+"" ステータスライン
+" 常にステータスラインを表示
+set laststatus=2
+"カーソルが何行目の何列目に置かれているかを表示する
+set ruler
+"ステータスラインに文字コードと改行文字を表示する
+if winwidth(0) >= 120
+	set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=[%{GetB()}]\ %l,%c%V%8P
+else
+	set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %f%=[%{GetB()}]\ %l,%c%V%8P
+endif
+" ステータスラインのカラー
+highlight StatusLine ctermfg=green ctermbg=black
+"入力モード時、ステータスラインのカラーを変更
+augroup InsertHook
+	autocmd!
+	autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=black
+	autocmd InsertLeave * highlight StatusLine ctermfg=green ctermbg=black
+augroup END
+function! GetB()
+	let c = matchstr(getline('.'), '.', col('.') - 1)
+	let c = iconv(c, &enc, &fenc)
+	return String2Hex(c)
+endfunction
+" help eval-examples
+" The function Nr2Hex() returns the Hex string of a number.
+func! Nr2Hex(nr)
+	let n = a:nr
+	let r = ""
+	while n
+		let r = '0123456789ABCDEF'[n % 16] . r
+		let n = n / 16
+	endwhile
+	return r
+endfunc
+" The function String2Hex() converts each character in a string to a two
+" character Hex string.
+func! String2Hex(str)
+	let out = ''
+	let ix = 0
+	while ix < strlen(a:str)
+		let out = out . Nr2Hex(char2nr(a:str[ix]))
+		let ix = ix + 1
+	endwhile
+	return out
+endfunc
