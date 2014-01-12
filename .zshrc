@@ -6,13 +6,25 @@ bindkey -e
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# typescript
+export PATH=$(which tvm | sed -e "s/bin/lib\/node_modules/")/current/bin:$PATH
+
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init - zsh)"
 
+# tvm
+export PATH=$(which tvm | sed -e "s/bin/lib\/node_modules/")/current/bin:$PATH
+
 # emacs
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs.app="/Applications/Emacs.app/Contents/MacOS/Emacs"
+
+# vim
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim.app='/Applications/MacVim.app/Contents/MacOS/MacVim'
+
 
 # PROMPT
 PROMPT="%/%% "

@@ -1,14 +1,17 @@
 "" Neobundle init
 filetype plugin indent off " Required!
 if has('vim_starting')
-	set nocompatible " Be iMproved
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'groenewege/vim-less'
 
 "" Unite.vim
 NeoBundle 'Shougo/unite.vim.git'
@@ -30,29 +33,29 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 "" Neocomplcache.vim
 NeoBundle 'Shougo/neocomplcache.vim.git'
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
-let g:acp_enableAtStartup = 0
+" let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
-let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
+" let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
+" let g:neocomplcache_enable_camel_case_completion = 1
 " Use underscore completion.
-let g:neocomplcache_enable_underbar_completion = 1
+" let g:neocomplcache_enable_underbar_completion = 1
 " Sets minimum char length of syntax keyword.
-let g:neocomplcache_min_syntax_length = 3
+" let g:neocomplcache_min_syntax_length = 3
 " buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 " Key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-y>  neocomplcache#close_popup()
+" inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "" vim-alignta as like indent
 NeoBundle 'h1mesuke/vim-alignta.git'
@@ -104,13 +107,14 @@ syntax on
 set autoindent    " 自動でインデント
 " set paste         " ペースト時にautoindentを無効に
 set smartindent   " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする
-set tabstop=4    " タブ表示幅
-set shiftwidth=4 " インデント幅
+set tabstop=2    " タブ表示幅
+set shiftwidth=2 " インデント幅
+set expandtab
 if has("autocmd")
-	"ファイルタイプの検索を有効にする
-	filetype plugin on
-	" そのファイルタイプにあわせたインデントを利用する
-	filetype indent on
+  "ファイルタイプの検索を有効にする
+  filetype plugin on
+  " そのファイルタイプにあわせたインデントを利用する
+  filetype indent on
 endif
 
 "" エンコーディング
@@ -120,59 +124,59 @@ set encoding=utf-8   " デフォルトエンコーディング
 " from ずんWiki http://www.kawaz.jp/pukiwiki/?vim#content_1_7
 " 文字コードの自動認識
 if &encoding !=# 'utf-8'
-	set encoding=japan
-	set fileencoding=japan
+  set encoding=japan
+  set fileencoding=japan
 endif
 if has('iconv')
-	let s:enc_euc = 'euc-jp'
-	let s:enc_jis = 'iso-2022-jp'
-	" iconvがeucJP-msに対応しているかをチェック
-	if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
-		let s:enc_euc = 'eucjp-ms'
-		let s:enc_jis = 'iso-2022-jp-3'
-		" iconvがJISX0213に対応しているかをチェック
-	elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
-		let s:enc_euc = 'euc-jisx0213'
-		let s:enc_jis = 'iso-2022-jp-3'
-	endif
-	" fileencodingsを構築
-	if &encoding ==# 'utf-8'
-		let s:fileencodings_default = &fileencodings
-		let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
-		let &fileencodings = &fileencodings .','. s:fileencodings_default
-		unlet s:fileencodings_default
-	else
-		let &fileencodings = &fileencodings .','. s:enc_jis
-		set fileencodings+=utf-8,ucs-2le,ucs-2
-		if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
-			set fileencodings+=cp932
-			set fileencodings-=euc-jp
-			set fileencodings-=euc-jisx0213
-			set fileencodings-=eucjp-ms
-			let &encoding = s:enc_euc
-			let &fileencoding = s:enc_euc
-		else
-			let &fileencodings = &fileencodings .','. s:enc_euc
-		endif
-	endif
-	" 定数を処分
-	unlet s:enc_euc
-	unlet s:enc_jis
+  let s:enc_euc = 'euc-jp'
+  let s:enc_jis = 'iso-2022-jp'
+  " iconvがeucJP-msに対応しているかをチェック
+  if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
+    let s:enc_euc = 'eucjp-ms'
+    let s:enc_jis = 'iso-2022-jp-3'
+    " iconvがJISX0213に対応しているかをチェック
+  elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
+    let s:enc_euc = 'euc-jisx0213'
+    let s:enc_jis = 'iso-2022-jp-3'
+  endif
+  " fileencodingsを構築
+  if &encoding ==# 'utf-8'
+    let s:fileencodings_default = &fileencodings
+    let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
+    let &fileencodings = &fileencodings .','. s:fileencodings_default
+    unlet s:fileencodings_default
+  else
+    let &fileencodings = &fileencodings .','. s:enc_jis
+    set fileencodings+=utf-8,ucs-2le,ucs-2
+    if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
+      set fileencodings+=cp932
+      set fileencodings-=euc-jp
+      set fileencodings-=euc-jisx0213
+      set fileencodings-=eucjp-ms
+      let &encoding = s:enc_euc
+      let &fileencoding = s:enc_euc
+    else
+      let &fileencodings = &fileencodings .','. s:enc_euc
+    endif
+  endif
+  " 定数を処分
+  unlet s:enc_euc
+  unlet s:enc_jis
 endif
 " 日本語を含まない場合は fileencoding に encoding を使うようにする
 if has('autocmd')
-	function! AU_ReCheck_FENC()
-		if &fileencoding =~# 'iso-2022-jp' && search("[^\x01-\x7e]", 'n') == 0
-			let &fileencoding=&encoding
-		endif
-	endfunction
-	autocmd BufReadPost * call AU_ReCheck_FENC()
+  function! AU_ReCheck_FENC()
+    if &fileencoding =~# 'iso-2022-jp' && search("[^\x01-\x7e]", 'n') == 0
+      let &fileencoding=&encoding
+    endif
+  endfunction
+  autocmd BufReadPost * call AU_ReCheck_FENC()
 endif
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
 " □とか○の文字があってもカーソル位置がずれないようにする
 if exists('&ambiwidth')
-	set ambiwidth=double
+  set ambiwidth=double
 endif
 " cvsの時は文字コードをeuc-jpに設定
 autocmd FileType cvs :set fileencoding=euc-jp
@@ -201,42 +205,42 @@ set laststatus=2
 set ruler
 "ステータスラインに文字コードと改行文字を表示する
 if winwidth(0) >= 120
-	set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=[%{GetB()}]\ %l,%c%V%8P
+  set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %F%=[%{GetB()}]\ %l,%c%V%8P
 else
-	set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %f%=[%{GetB()}]\ %l,%c%V%8P
+  set statusline=%<[%n]%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y\ %f%=[%{GetB()}]\ %l,%c%V%8P
 endif
 " ステータスラインのカラー
 highlight StatusLine ctermfg=green ctermbg=black
 "入力モード時、ステータスラインのカラーを変更
 augroup InsertHook
-	autocmd!
-	autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=black
-	autocmd InsertLeave * highlight StatusLine ctermfg=green ctermbg=black
+  autocmd!
+  autocmd InsertEnter * highlight StatusLine ctermfg=white ctermbg=black
+  autocmd InsertLeave * highlight StatusLine ctermfg=green ctermbg=black
 augroup END
 function! GetB()
-	let c = matchstr(getline('.'), '.', col('.') - 1)
-	let c = iconv(c, &enc, &fenc)
-	return String2Hex(c)
+  let c = matchstr(getline('.'), '.', col('.') - 1)
+  let c = iconv(c, &enc, &fenc)
+  return String2Hex(c)
 endfunction
 " help eval-examples
 " The function Nr2Hex() returns the Hex string of a number.
 func! Nr2Hex(nr)
-	let n = a:nr
-	let r = ""
-	while n
-		let r = '0123456789ABCDEF'[n % 16] . r
-		let n = n / 16
-	endwhile
-	return r
+  let n = a:nr
+  let r = ""
+  while n
+    let r = '0123456789ABCDEF'[n % 16] . r
+    let n = n / 16
+  endwhile
+  return r
 endfunc
 " The function String2Hex() converts each character in a string to a two
 " character Hex string.
 func! String2Hex(str)
-	let out = ''
-	let ix = 0
-	while ix < strlen(a:str)
-		let out = out . Nr2Hex(char2nr(a:str[ix]))
-		let ix = ix + 1
-	endwhile
-	return out
+  let out = ''
+  let ix = 0
+  while ix < strlen(a:str)
+    let out = out . Nr2Hex(char2nr(a:str[ix]))
+    let ix = ix + 1
+  endwhile
+  return out
 endfunc
