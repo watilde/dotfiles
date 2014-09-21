@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="fox"
+ZSH_THEME="frisk"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,6 +86,9 @@ alias tsc='tvm tsc'
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init - zsh)"
+# pyenv
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
 # emacs
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs.app="/Applications/Emacs.app/Contents/MacOS/Emacs"
@@ -96,3 +99,6 @@ alias vim.app='/Applications/MacVim.app/Contents/MacOS/MacVim'
 [ -f /Users/watilde/.travis/travis.sh ] && source /Users/watilde/.travis/travis.sh
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/watilde/Development/cocos2d-js-v3.0/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
