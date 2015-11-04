@@ -21,6 +21,10 @@
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+;; display line number
+(global-linum-mode t)
+
+;; enable mouse
 (xterm-mouse-mode t)
 (mouse-wheel-mode t)
 (global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
