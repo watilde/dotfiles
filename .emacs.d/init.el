@@ -1,6 +1,3 @@
-
-
-
 ;; list the packages
 (setq package-list '(js2-mode tabbar))
 
