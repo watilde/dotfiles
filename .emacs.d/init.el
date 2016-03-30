@@ -73,6 +73,9 @@
 ;; no backup
 (setq backup-inhibited t)
 
+;; delete auto-save file
+(setq delete-auto-save-files t)
+
 ;; scroll line by line
 (setq scroll-step 1)
 
