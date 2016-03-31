@@ -1,3 +1,6 @@
+;; no menu-bar
+(menu-bar-mode 0)
+
 ;; display line number
 (global-linum-mode t)
 
