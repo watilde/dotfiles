@@ -2,4 +2,6 @@
 source  ~/.fish/package.fish
 
 ## Load inits files
-source  ~/.fish/inits/*.fish
+for file in ~/.fish/inits/*.fish
+    source $file
+end

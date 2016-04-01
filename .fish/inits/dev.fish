@@ -1,5 +1,5 @@
 # depot_tool
-set -x PATH=$PATH:/Users/watilde/Development/depot_tools
+set -x PATH $HOME/Development/depot_tools $PATH
 
 # server
 alias server='python -m SimpleHTTPServer'
@@ -13,4 +13,4 @@ alias run-tests="tools/run-tests.py --arch=x64"
 # [ -f /Users/watilde/.travis/travis.sh ] && source /Users/watilde/.travis/travis.sh
 
 # Added by the Heroku Toolbelt
-set -x PATH="/usr/local/heroku/bin $PATH"
+set -x PATH "/usr/local/heroku/bin $PATH"
