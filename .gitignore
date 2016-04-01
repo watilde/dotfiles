@@ -1,3 +1,4 @@
 .emacs.d/packages/*
+
 .vim/packages/*
 !.vim/packages/neobundle.vim
