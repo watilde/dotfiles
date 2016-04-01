@@ -1,9 +1,10 @@
 # watilde's dotfiles
 here is my chest:
-+ fish
 + emacs
-+ vim
++ fish
 + tmux
++ vim
++ zshrc
 
 ## Install via chest
 ```
