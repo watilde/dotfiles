@@ -1,7 +1,10 @@
 # watilde's dotfiles
-here is my chest:
+![screen shot](./screen.jpg)
+
+## Dependencies
 + emacs
 + fish
++ fisherman
 + tmux
 + vim
 + zshrc
