@@ -45,7 +45,7 @@ ZSH_THEME="frisk"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nyan web-search encode64 npm)
+plugins=(git web-search encode64 npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,26 +79,47 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# lisp
+alias lisp='/usr/local/ccl/dx86cl64'
+
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-# tvm
-alias tsc='tvm tsc'
+
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init - zsh)"
+
 # pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
+
 # emacs
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs.app="/Applications/Emacs.app/Contents/MacOS/Emacs"
+
 # vim
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vim.app='/Applications/MacVim.app/Contents/MacOS/MacVim'
+
 # Added by travis gem
 [ -f /Users/watilde/.travis/travis.sh ] && source /Users/watilde/.travis/travis.sh
+
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/watilde/Development/cocos2d-js-v3.0/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# OPAM configuration
+. /Users/watilde/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# depot_tool
+export PATH=$PATH:/Users/watilde/Development/depot_tools
+
+# server
+alias server='python -m SimpleHTTPServer'
+
+# Java
+export JAVA_HOME=`/usr/libexec/java_home`
+
+# V8
+alias x64="out/x64.release/d8 test/webkit/resources/standalone-pre.js test/webkit/fast/js/JSON-parse-reviver.js test/webkit/resources/standalone-post.js"
+alias ia32="out/ia32.release/d8 test/webkit/resources/standalone-pre.js test/webkit/fast/js/JSON-parse-reviver.js test/webkit/resources/standalone-post.js"
+alias run-tests="tools/run-tests.py --arch=x64"
