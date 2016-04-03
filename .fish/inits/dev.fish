@@ -1,6 +1,9 @@
 # depot_tool
 set -x PATH $HOME/Development/depot_tools $PATH
 
+# gettext
+set -x PATH /usr/local/opt/gettext/bin $PATH
+
 # server
 alias server='python -m SimpleHTTPServer'
 
