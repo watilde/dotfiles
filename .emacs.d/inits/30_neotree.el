@@ -4,7 +4,7 @@
 
 (setq neo-smart-open t)
 
-(setq neo-window-position "right")
+(setq neo-window-position 'right)
 
 (custom-set-faces
  '(col-highlight ((t (:background "color-233"))))
