@@ -1,5 +1,5 @@
 ;; list the packages
-(setq package-list '(js2-mode tabbar init-loader))
+(setq package-list '(js2-mode tabbar init-loader neotree))
 
 ;; Access Marmalade and MELPA repositories, in addition to GNU ELPA
 (setq package-archives
