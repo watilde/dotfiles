@@ -1,4 +1,5 @@
 .emacs.d/packages/*
+.emacs.d/auto-save-list/*
 
 .vim/packages/*
 !.vim/packages/neobundle.vim
