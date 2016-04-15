@@ -7,7 +7,7 @@
 + fisherman
 + tmux
 + vim
-+ zshrc
++ zsh
 
 ## Install via chest
 ```
