@@ -22,6 +22,7 @@ set ttymouse=xterm2
 " Syntax
 filetype plugin on
 syntax on
+set spell
 
 "" display some meta infos
 set showmatch
