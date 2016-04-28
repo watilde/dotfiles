@@ -14,7 +14,7 @@ set -x PATH $HOME/.pyenv/bin $PATH
 . (pyenv init - | psub)
 
 # OPAM configuration
-# . /Users/watilde/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. /Users/watilde/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # Java
 set -x JAVA_HOME `/usr/libexec/java_home`
