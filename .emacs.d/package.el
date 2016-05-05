@@ -5,7 +5,8 @@
 (setq package-archives
   '( ("gnu" . "http://elpa.gnu.org/packages/")
      ("marmalade" . "https://marmalade-repo.org/packages/")
-     ("melpa" . "http://melpa.org/packages/")))
+     ("melpa" . "http://melpa.org/packages/")
+     ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
 (setq package-user-dir (locate-user-emacs-file "packages"))
 
