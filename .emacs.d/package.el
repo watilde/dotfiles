@@ -1,5 +1,5 @@
 ;; list the packages
-(setq package-list '(js2-mode tabbar init-loader neotree))
+(setq package-list '(js2-mode tabbar init-loader neotree haskell-mode rainbow-delimiters))
 
 ;; Access Marmalade and MELPA repositories, in addition to GNU ELPA
 (setq package-archives
