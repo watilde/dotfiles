@@ -9,6 +9,8 @@
 
 ;; no backup
 (setq backup-inhibited t)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; scroll line by line
 (setq scroll-step 1)
