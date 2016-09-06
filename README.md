@@ -2,12 +2,14 @@
 ![screen shot](./screen.jpg)
 
 ## Dependencies
-+ emacs
-+ fish
-+ fisherman
++ bash
 + tmux
-+ vim
-+ zsh
++ Vim
++ Emacs
++ Hyperterm
++ Node.js
++ npm
++ chest
 
 ## Install via chest
 ```
