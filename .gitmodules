@@ -1,7 +1,7 @@
 [submodule ".vim/packages/neobundle.vim"]
 	path = .vim/packages/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim.git
-[submodule ".bash_it"]
+[submodule ".bash/packages/bash-it"]
 	path = .bash/packages/bash-it
 	url = https://github.com/Bash-it/bash-it.git
 [submodule ".bash/packages/depot_tools"]
