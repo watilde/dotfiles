@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Path to the bash it configuration
-export BASH_IT=$HOME/.bash/packages/bash-it
+export BASH_IT="$HOME/.bash/packages/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='bobby'
+export BASH_IT_THEME='demula'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -35,4 +35,4 @@ export SCM_CHECK=true
 # export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
-source $BASH_IT/bash_it.sh
+source "$BASH_IT/bash_it.sh"

@@ -4,3 +4,6 @@
 [submodule ".bash_it"]
 	path = .bash/packages/bash-it
 	url = https://github.com/Bash-it/bash-it.git
+[submodule ".bash/packages/depot_tools"]
+	path = .bash/packages/depot_tools
+	url = https://chromium.googlesource.com/chromium/tools/depot_tools.git
