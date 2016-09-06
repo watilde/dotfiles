@@ -1,5 +1,5 @@
 #!/bin/bash
 export INITS=$HOME/.bash/inits/*
-for file in $INITS; do
-  source $file
+for FILE in $INITS; do
+  source $FILE
 done

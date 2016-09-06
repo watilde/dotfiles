@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Emacs
 if [ -e '/Applications/Emacs.app' ]; then
   alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
