@@ -4,5 +4,3 @@
 .vim/packages/*
 !.vim/packages/neobundle.vim
 
-.hyperterm_plugins/node_modules
-.hyperterm_plugins/local
