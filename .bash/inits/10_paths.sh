@@ -5,6 +5,7 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Python
 export PATH="$HOME/.pyenv/bin:$PATH"
