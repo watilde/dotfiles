@@ -8,7 +8,10 @@
   swift-mode
   rust-mode
   sass-mode
-  rainbow-delimiters))
+  rainbow-delimiters
+  tabbar-ruler
+  powerline
+  mode-icons))
 
 ;; Access Marmalade and MELPA repositories, in addition to GNU ELPA
 (setq package-archives
