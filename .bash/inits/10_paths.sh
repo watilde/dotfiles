@@ -2,6 +2,8 @@
 
 # Node.js
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
