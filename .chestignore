@@ -4,3 +4,5 @@ screen.jpg
 .git
 .gitignore
 .gitmodules
+
+node_modules
