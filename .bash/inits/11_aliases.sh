@@ -12,6 +12,7 @@ if [ -e '/Applications/MacVim.app' ]; then
   alias vim.app='/Applications/MacVim.app/Contents/MacOS/MacVim'
 fi
 
+# List
 case "${OSTYPE}" in
 darwin*)
   alias ls="ls -G"
@@ -20,3 +21,6 @@ linux*)
   alias ls='ls --color'
   ;;
 esac
+
+# Rm
+alias rm="$__CHEST/node_modules/.bin/trash"
