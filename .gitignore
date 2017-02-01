@@ -5,3 +5,4 @@
 !.vim/packages/neobundle.vim
 
 node_modules
+Dockerfile
