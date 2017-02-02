@@ -8,7 +8,8 @@ RUN apt-get -y install \
   curl \
   bash \
   git \
-  make
+  make \
+  gdb
 RUN apt-get clean
 
 # Define working directory
