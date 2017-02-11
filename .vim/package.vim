@@ -21,7 +21,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Shougo/unite.vim.git'
-NeoBundle 'Shougo/neocomplcache.vim.git'
 NeoBundle 'h1mesuke/vim-alignta.git'
 NeoBundle 'mxw/vim-jsx.git'
 
