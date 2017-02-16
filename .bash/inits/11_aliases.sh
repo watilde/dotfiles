@@ -23,4 +23,6 @@ linux*)
 esac
 
 # Rm
-alias rm="$__CHEST/node_modules/.bin/trash"
+if [ -e "$__CHEST/node_modules/.bin/trash" ]; then
+  alias rm="$__CHEST/node_modules/.bin/trash"
+fi
