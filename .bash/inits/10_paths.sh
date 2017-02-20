@@ -9,9 +9,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Python
-export PATH="$HOME/.pyenv/bin:$PATH"
-
 # depot_tools
 export PATH="$HOME/.bash/packages/depot_tools:$PATH"
 
