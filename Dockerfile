@@ -9,7 +9,8 @@ RUN apt-get -y install \
   bash \
   git \
   make \
-  gdb
+  gdb \
+  lldb
 RUN apt-get clean
 
 # Define working directory
