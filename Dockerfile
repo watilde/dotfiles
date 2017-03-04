@@ -10,7 +10,8 @@ RUN apt-get -y install \
   git \
   make \
   gdb \
-  lldb
+  lldb \
+  ccache
 RUN apt-get clean
 
 # Define working directory
