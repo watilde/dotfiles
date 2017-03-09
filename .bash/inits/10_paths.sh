@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# ccache
+export USE_CCACHE=1
+export CCACHE_DIR=/root/.ccache
+export set CC='ccache gcc'
+
 # Node.js
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -21,5 +24,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
 
-# Editor 
+# Editor
 export EDITOR='emacs'
+
+# Rust
+source ~/.cargo/env
