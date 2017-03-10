@@ -1,31 +1,32 @@
 #!/bin/bash
 
 # ccache
-export USE_CCACHE=1
-export CCACHE_DIR=/root/.ccache
-export set CC='ccache gcc'
+if [ -x "$(command -v ccache)" ]; then
+  export USE_CCACHE=1
+  export CCACHE_DIR="$HOME/.ccache"
+  export set CC='ccache gcc'
+fi
 
 # Node.js
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
+if [ -e "$HOME/.nodebrew" ]; then
+  export PATH="$HOME/.nodebrew/current/bin:$PATH"
+fi
 
 # Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -e "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+# Rust
+if [ -e "$HOME/.cargo/env" ]; then
+  source ~/.cargo/env
+fi
 
 # depot_tools
 export PATH="$HOME/.bash/packages/depot_tools:$PATH"
 
-# gettext
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-
-# Heroku
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Java
-export JAVA_HOME=`/usr/libexec/java_home`
-
 # Editor
-export EDITOR='emacs'
-
-# Rust
-source ~/.cargo/env
+if [ -x "$(command -v emacs)" ]; then
+  export EDITOR='emacs'
+fi
