@@ -26,3 +26,8 @@ esac
 if [ -e "$__CHEST/node_modules/.bin/trash" ]; then
   alias rm="$__CHEST/node_modules/.bin/trash"
 fi
+
+# Server
+if [ -e "$__CHEST/node_modules/.bin/http-server" ]; then
+  alias server="$__CHEST/node_modules/.bin/http-server"
+fi
