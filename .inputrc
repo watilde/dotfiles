@@ -1,0 +1,7 @@
+set-editing-mode vi
+set horizontal-scroll-mode On
+set comment-begin #
+set expand-tilde On
+
+control-h: backward-detele-char
+control-r: redraw-current-line
