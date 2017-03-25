@@ -1,0 +1,17 @@
+[user]
+  email = daijiro.wachi@gmail.com
+  name = Daijiro Wachi
+[color]
+  ui = auto
+[core]
+  editor = /usr/bin/vim
+  whitespace = fix
+[alias]
+  st = status
+  cm = commit
+  co = checkout
+  b = branch
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
