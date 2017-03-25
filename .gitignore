@@ -2,7 +2,7 @@
 .emacs.d/auto-save-list/*
 
 .vim/packages/*
-!.vim/packages/neobundle.vim
+!.vim/packages/dein.vim
 
 node_modules
 Dockerfile

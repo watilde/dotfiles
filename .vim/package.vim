@@ -1,34 +1,30 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
 if &compatible
   set nocompatible " Be iMproved
 endif
 
-" Required:
-set runtimepath^=~/.vim/packages/neobundle.vim/
+if &compatible
+  set nocompatible
+endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/packages/'))
+" Require:
+set runtimepath+=~/.vim/packages/dein.vim/
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Start:
+call dein#begin(expand('~/.vim/packages/'))
+
 
 " My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'briancollins/vim-jst'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'Shougo/unite.vim.git'
-NeoBundle 'h1mesuke/vim-alignta.git'
-NeoBundle 'mxw/vim-jsx.git'
+call dein#add('briancollins/vim-jst')
+call dein#add('groenewege/vim-less')
+call dein#add('Shougo/unite.vim.git')
+call dein#add('h1mesuke/vim-alignta.git')
+call dein#add('mxw/vim-jsx.git')
 
-call neobundle#end()
+" End:
+call dein#end()
 
-" Required:
+" Install:
+" call dein#install()
+
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+syntax enable
