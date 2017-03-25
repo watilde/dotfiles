@@ -31,3 +31,8 @@ fi
 if [ -e "$__CHEST/node_modules/.bin/http-server" ]; then
   alias server="$__CHEST/node_modules/.bin/http-server"
 fi
+
+# Chest
+if [ -e "$__CHEST/node_modules/.bin/chest" ]; then
+  alias chest="$__CHEST/node_modules/.bin/chest"
+fi
