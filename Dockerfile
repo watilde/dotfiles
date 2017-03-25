@@ -12,7 +12,8 @@ RUN apt-get -y install \
   make \
   gdb \
   lldb \
-  ccache
+  ccache \
+  yarn
 RUN apt-get clean
 
 # Define working directory
