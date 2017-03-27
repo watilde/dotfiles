@@ -1,9 +1,12 @@
 [submodule ".bash/packages/bash-it"]
-	path = .bash/packages/bash-it
-	url = https://github.com/Bash-it/bash-it.git
+  path = .bash/packages/bash-it
+  url = https://github.com/Bash-it/bash-it.git
 [submodule ".bash/packages/depot_tools"]
-	path = .bash/packages/depot_tools
-	url = https://chromium.googlesource.com/chromium/tools/depot_tools.git
+  path = .bash/packages/depot_tools
+  url = https://chromium.googlesource.com/chromium/tools/depot_tools.git
 [submodule ".vim/packages/dein.vim"]
-	path = .vim/packages/dein.vim
-	url = https://github.com/Shougo/dein.vim.git
+  path = .vim/packages/dein.vim
+  url = https://github.com/Shougo/dein.vim.git
+[submodule ".bash/packages/z"]
+  path = .bash/packages/z
+  url = https://github.com/rupa/z

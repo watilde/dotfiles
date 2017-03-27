@@ -30,3 +30,6 @@ export PATH="$HOME/.bash/packages/depot_tools:$PATH"
 if [ -x "$(command -v emacs)" ]; then
   export EDITOR='emacs'
 fi
+
+# Z
+source "$__CHEST/.bash/packages/z/z.sh"
