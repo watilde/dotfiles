@@ -7,6 +7,7 @@
   haskell-mode
   swift-mode
   rust-mode
+  cc-mode
   sass-mode
   mode-icons
   rainbow-delimiters
