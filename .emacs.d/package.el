@@ -8,6 +8,7 @@
   swift-mode
   rust-mode
   cc-mode
+  python-mode
   sass-mode
   mode-icons
   rainbow-delimiters
