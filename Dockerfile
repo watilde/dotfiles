@@ -13,6 +13,8 @@ RUN apt-get -y install \
   gdb \
   lldb \
   ccache \
+  cmake \
+  libgit2 \
   yarn
 RUN apt-get clean
 
