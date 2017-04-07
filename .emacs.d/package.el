@@ -1,6 +1,5 @@
 ;; list the packages
 (setq package-list '(
-  tabbar
   init-loader
   neotree
   js2-mode
@@ -10,10 +9,7 @@
   cc-mode
   python-mode
   sass-mode
-  mode-icons
-  rainbow-delimiters
-  tabbar-ruler
-  powerline))
+  rainbow-delimiters))
 
 ;; Access Marmalade and MELPA repositories, in addition to GNU ELPA
 (setq package-archives
