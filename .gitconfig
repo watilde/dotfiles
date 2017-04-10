@@ -7,7 +7,7 @@
   editor = /usr/bin/vim
   whitespace = fix
 [push]
-  default = matching
+  default = nothing
 [alias]
   st = status
   cm = commit
