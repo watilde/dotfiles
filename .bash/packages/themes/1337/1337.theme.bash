@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # to fix a bug in bash-it
+# https://github.com/Bash-it/bash-it/pull/935
 white="\[\e[0;37m\]"
 
 SCM_THEME_PROMPT_DIRTY=" ${orange}x"
