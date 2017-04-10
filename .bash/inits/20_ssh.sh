@@ -1,5 +1,5 @@
 if [ -f ~/.ssh-agent ]; then
-  . ~/.ssh-agent
+  . ~/.ssh-agent > /dev/null
 fi
 
 if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
