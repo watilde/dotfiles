@@ -6,6 +6,8 @@
 [core]
   editor = /usr/bin/vim
   whitespace = fix
+[push]
+  default = matching
 [alias]
   st = status
   cm = commit
