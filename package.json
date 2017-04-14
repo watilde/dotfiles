@@ -5,7 +5,8 @@
   "description": "my dotfiles",
   "main": "index.js",
   "scripts": {
-    "update": "git submodule update --recursive",
+    "update": "git submodule foreach git pull origin master",
+    "preinstall": "git submodule update --recursive",
     "start": "docker run -i -t -d -v ~/Development:~/Development ubuntu:16.04"
   },
   "repository": {
