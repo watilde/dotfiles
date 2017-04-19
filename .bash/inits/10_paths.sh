@@ -33,3 +33,11 @@ fi
 
 # Z
 source "$__CHEST/.bash/packages/z/z.sh"
+
+# adb
+if [ -e "$HOME/Library/Android/sdk/platform-tools" ]; then
+  export PATH=$PATH:"$HOME/Library/Android/sdk/platform-tools"
+fi
+if [ -e "$HOME/Library/Android/sdk/tools/" ]; then
+  export PATH=$PATH:"$HOME/Library/Android/sdk/tools/"
+fi
