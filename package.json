@@ -21,6 +21,7 @@
   "homepage": "https://github.com/watilde/dotfiles#readme",
   "dependencies": {
     "chest": "^1.2.3",
+    "emoji-cli": "^1.0.0",
     "http-server": "^0.9.0",
     "trash-cli": "^1.4.0",
     "yarn": "^0.22.0"

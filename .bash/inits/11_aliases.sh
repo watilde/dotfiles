@@ -41,3 +41,8 @@ fi
 if [ -e "$__CHEST/node_modules/.bin/yarn" ]; then
   alias yarn="$__CHEST/node_modules/.bin/yarn"
 fi
+
+# Emoji
+if [ -e "$__CHEST/node_modules/.bin/emoji" ]; then
+  alias emoji="$__CHEST/node_modules/.bin/emoji"
+fi
