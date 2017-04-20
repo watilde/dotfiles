@@ -1,5 +1,6 @@
 set bell-style none
-set horizontal-scroll-mode On
 set comment-begin #
-set expand-tilde On
 set completion-ignore-case on
+set expand-tilde on
+set horizontal-scroll-mode on
+set visible-stats on
