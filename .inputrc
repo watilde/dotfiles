@@ -2,4 +2,4 @@ set bell-style none
 set horizontal-scroll-mode On
 set comment-begin #
 set expand-tilde On
-
+set completion-ignore-case on
