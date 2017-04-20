@@ -1,3 +1,5 @@
+.DS_Store
+
 .emacs.d/packages/*
 .emacs.d/auto-save-list/*
 
