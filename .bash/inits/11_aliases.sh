@@ -51,3 +51,8 @@ fi
 if [ -e "$__CHEST/node_modules/.bin/core-validate-commit" ]; then
   alias core-validate-commit="$__CHEST/node_modules/.bin/core-validate-commit"
 fi
+
+# citgm
+if [ -e "$__CHEST/node_modules/.bin/citgm" ]; then
+  alias citgm="$__CHEST/node_modules/.bin/citgm"
+fi
