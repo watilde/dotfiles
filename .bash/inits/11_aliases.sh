@@ -36,3 +36,8 @@ fi
 if [ -e "$__CHEST/node_modules/.bin/chest" ]; then
   alias chest="$__CHEST/node_modules/.bin/chest"
 fi
+
+# Yarn
+if [ -e "$__CHEST/node_modules/.bin/yarn" ]; then
+  alias yarn="$__CHEST/node_modules/.bin/yarn"
+fi
