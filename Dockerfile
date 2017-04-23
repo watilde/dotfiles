@@ -15,7 +15,9 @@ RUN apt-get -y install \
   ccache \
   cmake \
   libgit2 \
-  yarn
+  yarn \
+  nmap \
+  rpcinfo
 RUN apt-get clean
 
 # Define working directory
