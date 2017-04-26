@@ -5,24 +5,32 @@ FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install \
-  wget \
-  curl \
+  apt-utils \
   bash \
-  git \
-  make \
-  gdb \
-  lldb \
+  curl \
   ccache \
+  emacs \
   cmake \
-  libgit2 \
-  yarn \
+  gdb \
+  git \
+  guile-2.0 \
+  lldb \
+  make \
   nmap \
-  rpcinfo
+  nodejs \
+  npm \
+  tmux \
+  vim \
+  wget
+
 RUN apt-get clean
 
-# Define working directory
-RUN mkdir ~/Development
-WORKDIR ~/Development
+# Dotfiles
+RUN git clone https://github.com/watilde/dotfiles.git .chest
+WORKDIR ~/.chest
+RUN npm run submodule-update
+WORKDIR ~/
+RUN chest open
 
 # Run with bash
 CMD ["bash"]
