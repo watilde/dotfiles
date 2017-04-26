@@ -5,9 +5,11 @@
   "description": "my dotfiles",
   "main": "index.js",
   "scripts": {
-    "update": "git submodule foreach git pull origin master",
-    "preinstall": "git submodule update --recursive",
-    "start": "docker run -i -t -d -v ~/Development:~/Development ubuntu:16.04"
+    "submodule-init": "git submodule update --init --recursive",
+    "submodule-update": "git submodule foreach git pull origin master",
+    "docker-build": "docker build -t 'chest:Dockerfile' .",
+    "docker-kill": "docker kill $(docker ps -q)",
+    "docker-run": "docker run -it chest"
   },
   "repository": {
     "type": "git",
