@@ -26,11 +26,16 @@ RUN apt-get -y install \
 RUN apt-get clean
 
 # Dotfiles
+WORKDIR /root
 RUN git clone https://github.com/watilde/dotfiles.git .chest
-WORKDIR ~/.chest
+
+WORKDIR /root/.chest
+RUN npm install
 RUN npm run submodule-update
-WORKDIR ~/
-RUN chest open
+
+WORKDIR /root
+RUN /root/.chest/node_modules/.bin/chest open
+RUN bash .bash/init.sh
 
 # Run with bash
 CMD ["bash"]
