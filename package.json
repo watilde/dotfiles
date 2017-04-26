@@ -10,7 +10,7 @@
     "docker-build": "docker build -t 'chest:latest' .",
     "docker-kill": "docker kill $(docker ps -q)",
     "docker-run": "docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh chest:latest",
-    "docker-rmi": "docker rmi $(docker images -q)"
+    "docker-rmi": "docker rmi -f $(docker images -q)"
   },
   "repository": {
     "type": "git",
