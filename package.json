@@ -9,7 +9,7 @@
     "submodule-update": "git submodule foreach git pull origin master",
     "docker-build": "docker build -t 'chest:latest' .",
     "docker-kill": "docker kill $(docker ps -q)",
-    "docker-run": "docker run -it chest"
+    "docker-run": "docker run -it chest:latest"
   },
   "repository": {
     "type": "git",
