@@ -32,7 +32,7 @@ RUN git clone https://github.com/watilde/dotfiles.git .chest
 WORKDIR /root/.chest
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install
-RUN npm run submodule-update
+RUN npm run submodule-init
 
 WORKDIR /root
 RUN /root/.chest/node_modules/.bin/chest open
