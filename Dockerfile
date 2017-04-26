@@ -36,7 +36,6 @@ RUN npm run submodule-init
 
 WORKDIR /root
 RUN /root/.chest/node_modules/.bin/chest open
-RUN bash .bash/init.sh
 
 # Run with bash
 CMD ["bash"]
