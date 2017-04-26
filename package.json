@@ -7,7 +7,7 @@
   "scripts": {
     "submodule-init": "git submodule update --init --recursive",
     "submodule-update": "git submodule foreach git pull origin master",
-    "docker-build": "docker build -t 'chest:Dockerfile' .",
+    "docker-build": "docker build -t 'chest:latest' .",
     "docker-kill": "docker kill $(docker ps -q)",
     "docker-run": "docker run -it chest"
   },
@@ -27,7 +27,6 @@
     "core-validate-commit": "^3.2.0",
     "emoji-cli": "^1.0.0",
     "http-server": "^0.9.0",
-    "trash-cli": "^1.4.0",
-    "yarn": "^0.22.0"
+    "trash-cli": "^1.4.0"
   }
 }
