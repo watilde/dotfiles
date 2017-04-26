@@ -18,4 +18,4 @@
   smudge = git-lfs smudge %f
   required = true
 [status]
-	showuntrackedfiles = no
+  showuntrackedfiles = no
