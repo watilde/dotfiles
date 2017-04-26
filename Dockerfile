@@ -4,8 +4,8 @@ FROM ubuntu:16.04
 # APT
 RUN apt-get update
 RUN apt-get -y upgrade
+RUN apt-get -y install apt-utils
 RUN apt-get -y install \
-  apt-utils \
   bash \
   curl \
   ccache \
@@ -30,7 +30,7 @@ WORKDIR /root
 RUN git clone https://github.com/watilde/dotfiles.git .chest
 
 WORKDIR /root/.chest
-RUN alias node=nodejs
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install
 RUN npm run submodule-update
 
