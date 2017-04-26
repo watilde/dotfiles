@@ -35,6 +35,7 @@ RUN npm install
 RUN npm run submodule-init
 
 WORKDIR /root
+RUN mv .bashrc .bashrc.default
 RUN /root/.chest/node_modules/.bin/chest open
 
 # Run with bash
