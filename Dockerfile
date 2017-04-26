@@ -30,6 +30,7 @@ WORKDIR /root
 RUN git clone https://github.com/watilde/dotfiles.git .chest
 
 WORKDIR /root/.chest
+RUN alias node=nodejs
 RUN npm install
 RUN npm run submodule-update
 
