@@ -14,6 +14,7 @@ RUN apt-get -y install \
   gdb \
   git \
   guile-2.0 \
+  irssi \
   lldb \
   make \
   nmap \
