@@ -2,6 +2,7 @@
 (setq package-list '(
   init-loader
   neotree
+  sublime-themes
   js2-mode
   haskell-mode
   swift-mode
