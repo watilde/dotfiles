@@ -4,8 +4,8 @@ FROM ubuntu:16.04
 # APT
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN apt-get -y install apt-utils
 RUN apt-get -y install \
+  apt-utils \
   bash \
   curl \
   ccache \
@@ -20,7 +20,9 @@ RUN apt-get -y install \
   nmap \
   nodejs \
   npm \
+  tcpdump \
   tmux \
+  traceroute \
   vim \
   wget
 
