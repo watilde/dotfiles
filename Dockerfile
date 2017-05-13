@@ -16,6 +16,7 @@ RUN apt-get -y install \
   guile-2.0 \
   irssi \
   lldb \
+  lua \
   make \
   nmap \
   nodejs \
