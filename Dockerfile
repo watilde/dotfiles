@@ -25,6 +25,7 @@ RUN apt-get -y install \
   nmap \
   nodejs \
   npm \
+  sar \
   tcpdump \
   tmux \
   traceroute \
