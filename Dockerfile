@@ -25,6 +25,7 @@ RUN apt-get -y install \
   nmap \
   nodejs \
   npm \
+  ruby-full \
   tcpdump \
   tmux \
   traceroute \
@@ -32,6 +33,12 @@ RUN apt-get -y install \
   wget
 
 RUN apt-get clean
+
+# Rust
+RUN curl https://sh.rustup.rs -sSf | sh
+
+# Go
+RUN tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 
 # Dotfiles
 WORKDIR /root

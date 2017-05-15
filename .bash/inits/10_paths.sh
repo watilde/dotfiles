@@ -23,6 +23,11 @@ if [ -e "$HOME/.cargo/env" ]; then
   source ~/.cargo/env
 fi
 
+# Go
+if [ -e "$PATH:/usr/local/go/bin" ]; then
+  export PATH=$PATH:/usr/local/go/bin
+fi
+
 # depot_tools
 export PATH="$HOME/.bash/packages/depot_tools:$PATH"
 
