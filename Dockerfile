@@ -20,12 +20,11 @@ RUN apt-get -y install \
   libboost-all-dev \
   libtool \
   lldb \
-  lua \
+  lua5.3 \
   make \
   nmap \
   nodejs \
   npm \
-  sar \
   tcpdump \
   tmux \
   traceroute \
