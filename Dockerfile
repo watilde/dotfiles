@@ -1,5 +1,5 @@
-# Build from Ubuntu stable
-FROM ubuntu:16.04
+# Build from Debian stable
+FROM debian:8.8
 
 # APT
 RUN apt-get update
@@ -9,8 +9,9 @@ RUN apt-get -y install \
   automake \
   apt-utils \
   bash \
-  curl \
   ccache \
+  curl \
+  coreutils \
   emacs \
   cmake \
   gdb \
@@ -20,7 +21,7 @@ RUN apt-get -y install \
   libboost-all-dev \
   libtool \
   lldb \
-  lua5.3 \
+  lua5.2 \
   make \
   nmap \
   nodejs \
