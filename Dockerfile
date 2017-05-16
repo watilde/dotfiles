@@ -29,6 +29,7 @@ RUN apt-get -y install \
   ruby-full \
   tcpdump \
   tmux \
+  tor-arm \
   traceroute \
   vim \
   wget
