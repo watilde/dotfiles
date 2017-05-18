@@ -5,33 +5,45 @@ FROM debian:8.8
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install \
+  aircrack-ng \
   autoconf \
   automake \
   apt-utils \
+  arp-scan \
   bash \
   ccache \
   curl \
   coreutils \
   emacs \
   cmake \
+  geoip \
+  geoip-database \
   gdb \
   git \
   guile-2.0 \
+  iproute2 \
   irssi \
   libboost-all-dev \
   libtool \
   lldb \
   lua5.2 \
+  macchanger \
   make \
+  nc \
+  nethogs \
+  nettop \
+  net-tools \
   nmap \
   nodejs \
   npm \
+  ophcrack \
   ruby-full \
   tcpdump \
   tmux \
   tor-arm \
   traceroute \
   vim \
+  wireshark-cli \
   wget
 
 RUN apt-get clean
