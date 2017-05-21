@@ -16,7 +16,7 @@ RUN apt-get -y install \
   coreutils \
   emacs \
   cmake \
-  geoip \
+  geoip-bin \
   geoip-database \
   gdb \
   git \
@@ -29,9 +29,8 @@ RUN apt-get -y install \
   lua5.2 \
   macchanger \
   make \
-  nc \
+  netcat \
   nethogs \
-  nettop \
   net-tools \
   nmap \
   nodejs \
@@ -44,7 +43,7 @@ RUN apt-get -y install \
   tor-arm \
   traceroute \
   vim \
-  wireshark-cli \
+  wireshark \
   wget
 
 RUN apt-get clean
