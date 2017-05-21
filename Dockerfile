@@ -40,6 +40,7 @@ RUN apt-get -y install \
   ruby-full \
   tcpdump \
   tmux \
+  tor \
   tor-arm \
   traceroute \
   vim \
