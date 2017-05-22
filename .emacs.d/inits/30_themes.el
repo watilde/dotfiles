@@ -1,1 +1,1 @@
-;(load-theme 'spolsky t)
+(load-theme 'spolsky t)
