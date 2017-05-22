@@ -1,5 +1,5 @@
-# Build from Debian stable
-FROM debian:8.8
+# Build from Ubuntu stable
+FROM ubuntu:16.04
 
 # APT
 RUN apt-get update
