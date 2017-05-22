@@ -37,6 +37,7 @@ RUN apt-get -y install \
   npm \
   ophcrack \
   ruby-full \
+  squid \
   tcpdump \
   tmux \
   tor \
