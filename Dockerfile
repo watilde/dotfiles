@@ -21,6 +21,7 @@ RUN apt-get -y install \
   gdb \
   git \
   guile-2.0 \
+  gtypist \
   iproute2 \
   irssi \
   libboost-all-dev \
