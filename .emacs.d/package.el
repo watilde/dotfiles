@@ -1,6 +1,7 @@
 ;; list the packages
 (setq package-list '(
   init-loader
+  tabbar
   neotree
   sublime-themes
   js2-mode
