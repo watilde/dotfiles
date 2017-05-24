@@ -57,7 +57,7 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyperborder",
-    "hyperpower",
+    // "hyperpower",
     // "hyperpunk"
   ],
   // plugins: [],
