@@ -22,3 +22,6 @@
 [log]
   abbrevCommit = true
   follow = true
+[status]
+  submoduleSummary = true
+  showUntrackedFiles = all
