@@ -11,8 +11,6 @@
   cc-mode
   python-mode
   sass-mode
-  magit
-  markdown-mode
   rainbow-delimiters))
 
 ;; Access Marmalade and MELPA repositories, in addition to GNU ELPA
