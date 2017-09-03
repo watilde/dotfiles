@@ -26,6 +26,7 @@
     "chest": "^1.2.3",
     "citgm": "^1.11.10",
     "core-validate-commit": "^3.2.0",
+    "dns-discovery": "^5.6.1",
     "emoji-cli": "^1.0.0",
     "http-server": "^0.10.0",
     "trash-cli": "^1.4.0"
