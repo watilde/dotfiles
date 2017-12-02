@@ -36,6 +36,11 @@ if [ -e "$__CHEST/node_modules/.bin/emoji" ]; then
   alias emoji="$__CHEST/node_modules/.bin/emoji"
 fi
 
+# Clinic
+if [ -e "$__CHEST/node_modules/.bin/clinic" ]; then
+  alias clinic="$__CHEST/node_modules/.bin/clinic"
+fi
+
 # Alert
 if [ -e "$__CHEST/node_modules/.bin/alert" ]; then
   alias alert="$__CHEST/node_modules/.bin/alert"
