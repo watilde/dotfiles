@@ -13,6 +13,7 @@
   cm = commit
   co = checkout
   b = branch
+  r = remote
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
