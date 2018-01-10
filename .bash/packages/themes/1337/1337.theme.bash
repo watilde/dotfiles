@@ -14,8 +14,15 @@ function get_path() {
   echo -e $DIR;
 }
 
+function get_branch_name() {
+  if null=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    echo $(git_prompt_minimal_info);
+  fi
+}
+
+
 function prompt_command() {
-  PS1="\n${green}$(get_path) $(git_prompt_minimal_info)\n${reset_color}\$ "
+  PS1="\n${green}$(get_path) $(get_branch_name)\n${reset_color}\$ "
 }
 
 safe_append_prompt_command prompt_command
