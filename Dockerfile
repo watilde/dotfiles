@@ -44,6 +44,7 @@ RUN apt-get -y install \
   tor \
   tor-arm \
   traceroute \
+  valgrind \
   vim \
   wireshark \
   wget
