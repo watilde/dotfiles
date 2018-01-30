@@ -30,6 +30,7 @@ RUN apt-get -y install \
   lua5.2 \
   macchanger \
   make \
+  nasm \
   netcat \
   nethogs \
   net-tools \
@@ -37,6 +38,7 @@ RUN apt-get -y install \
   nodejs \
   npm \
   ophcrack \
+  qemu \
   ruby-full \
   squid \
   tcpdump \
