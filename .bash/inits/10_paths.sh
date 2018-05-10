@@ -46,3 +46,7 @@ fi
 if [ -e "$HOME/Library/Android/sdk/tools/" ]; then
   export PATH=$PATH:"$HOME/Library/Android/sdk/tools/"
 fi
+
+# Git
+source "$__CHEST/.bash/packages/git-completion/git-completion.bash"
+
