@@ -39,3 +39,8 @@ fi
 if [ -e "$__CHEST/node_modules/.bin/citgm" ]; then
   alias citgm="$__CHEST/node_modules/.bin/citgm"
 fi
+
+# citgm
+if [ -e "$__CHEST/node_modules/.bin/gtop" ]; then
+  alias gtop="$__CHEST/node_modules/.bin/gtop"
+fi

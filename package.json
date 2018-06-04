@@ -28,6 +28,7 @@
     "core-validate-commit": "^3.4.0",
     "dns-discovery": "^5.6.1",
     "emoji-cli": "^1.0.0",
+    "gtop": "^0.1.5",
     "http-server": "^0.10.0",
     "trash-cli": "^1.4.0"
   }
