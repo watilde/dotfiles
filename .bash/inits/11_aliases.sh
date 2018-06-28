@@ -40,7 +40,10 @@ if [ -e "$__CHEST/node_modules/.bin/citgm" ]; then
   alias citgm="$__CHEST/node_modules/.bin/citgm"
 fi
 
-# citgm
+# gtop
 if [ -e "$__CHEST/node_modules/.bin/gtop" ]; then
   alias gtop="$__CHEST/node_modules/.bin/gtop"
 fi
+
+alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'

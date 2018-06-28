@@ -50,3 +50,8 @@ fi
 # Git
 source "$__CHEST/.bash/packages/git-completion/git-completion.bash"
 
+# Free TDS
+
+if [ -e "/usr/local/opt/freetds@0.91" ]; then
+  export PATH="/usr/local/opt/freetds@0.91/bin:$PATH"
+fi
