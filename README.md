@@ -8,5 +8,5 @@ $ git clone git@github.com:watilde/dotfiles.git .chest
 $ chest open
 $ cd .chest
 $ npm install
-$ npm run update
+$ npm run submodule-init
 ```
