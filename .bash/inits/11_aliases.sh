@@ -9,10 +9,10 @@ alias g="grep"
 # List
 case "${OSTYPE}" in
 darwin*)
-  alias l="ls -G -h"
+  alias ls="ls -G -h"
   ;;
 linux*)
-  alias l='ls --color -h'
+  alias ls='ls --color -h'
   ;;
 esac
 
