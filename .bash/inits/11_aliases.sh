@@ -1,12 +1,18 @@
 #!/bin/bash
 
+# History
+alias h="history"
+
+# Grep
+alias g="grep"
+
 # List
 case "${OSTYPE}" in
 darwin*)
-  alias ls="ls -G"
+  alias l="ls -G -h"
   ;;
 linux*)
-  alias ls='ls --color'
+  alias l='ls --color -h'
   ;;
 esac
 
