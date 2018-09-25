@@ -9,6 +9,7 @@
 [push]
   default = nothing
 [alias]
+  cp = cherry-pick
   st = status
   cm = commit
   co = checkout
