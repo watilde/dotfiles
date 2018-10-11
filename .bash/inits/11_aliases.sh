@@ -51,5 +51,10 @@ if [ -e "$__CHEST/node_modules/.bin/gtop" ]; then
   alias gtop="$__CHEST/node_modules/.bin/gtop"
 fi
 
+# tldr
+if [ -e "$__CHEST/node_modules/.bin/tldr" ]; then
+  alias tldr="$__CHEST/node_modules/.bin/tldr"
+fi
+
 alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
 alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
