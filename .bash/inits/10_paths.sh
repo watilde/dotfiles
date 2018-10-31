@@ -26,8 +26,8 @@ if [ -e "$HOME/.pyenv" ]; then
 fi
 
 # Rust
-if [ -e "$HOME/.cargo/env" ]; then
-  source ~/.cargo/env
+if [ -e "$HOME/.cargo/bin" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # Go

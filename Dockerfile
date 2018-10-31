@@ -42,6 +42,7 @@ RUN apt-get -y install \
   ruby-full \
   squid \
   tcpdump \
+  tldr \
   tmux \
   tor \
   tor-arm \
