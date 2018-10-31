@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/watilde/dotfiles#readme",
   "dependencies": {
+    "alert-cli": "0.0.1",
     "chest": "^1.2.3",
     "citgm": "^2.0.13",
     "core-validate-commit": "^3.4.0",

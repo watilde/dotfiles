@@ -36,6 +36,11 @@ if [ -e "$__CHEST/node_modules/.bin/emoji" ]; then
   alias emoji="$__CHEST/node_modules/.bin/emoji"
 fi
 
+# Alert
+if [ -e "$__CHEST/node_modules/.bin/alert" ]; then
+  alias alert="$__CHEST/node_modules/.bin/alert"
+fi
+
 # Core validate commit
 if [ -e "$__CHEST/node_modules/.bin/core-validate-commit" ]; then
   alias core-validate-commit="$__CHEST/node_modules/.bin/core-validate-commit"
