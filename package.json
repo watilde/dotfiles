@@ -25,13 +25,13 @@
   "dependencies": {
     "alert-cli": "0.0.1",
     "chest": "^1.2.3",
-    "citgm": "^2.0.13",
-    "core-validate-commit": "^3.4.0",
+    "citgm": "^3.2.2",
+    "core-validate-commit": "^3.6.1",
     "cowsay": "^1.3.1",
-    "dns-discovery": "^5.6.1",
+    "dns-discovery": "^6.2.2",
     "emoji-cli": "^1.0.0",
-    "gtop": "^0.1.5",
-    "http-server": "^0.10.0",
+    "gtop": "^1.0.0",
+    "http-server": "^0.11.1",
     "tldr": "^3.2.5",
     "trash-cli": "^1.4.0"
   }
