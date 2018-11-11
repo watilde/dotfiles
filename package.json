@@ -28,7 +28,6 @@
     "citgm": "^3.2.2",
     "core-validate-commit": "^3.6.1",
     "cowsay": "^1.3.1",
-    "dns-discovery": "^6.2.2",
     "emoji-cli": "^1.0.0",
     "gtop": "^1.0.0",
     "http-server": "^0.11.1",
