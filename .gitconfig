@@ -9,6 +9,7 @@
 [push]
   default = nothing
 [alias]
+  pushf = push --force-with-lease
   cp = cherry-pick
   st = status
   cm = commit
