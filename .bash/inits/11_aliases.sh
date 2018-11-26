@@ -56,6 +56,11 @@ if [ -e "$__CHEST/node_modules/.bin/gtop" ]; then
   alias gtop="$__CHEST/node_modules/.bin/gtop"
 fi
 
+# gitignore
+if [ -e "$__CHEST/node_modules/.bin/gitignore" ]; then
+  alias gitignore="$__CHEST/node_modules/.bin/gitignore"
+fi
+
 # tldr
 if [ -e "$__CHEST/node_modules/.bin/tldr" ]; then
   alias tldr="$__CHEST/node_modules/.bin/tldr"
