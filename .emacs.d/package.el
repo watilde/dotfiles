@@ -1,6 +1,7 @@
 ;; list the packages
 (setq package-list '(
   cc-mode
+  ess
   flycheck
   haskell-mode
   init-loader
