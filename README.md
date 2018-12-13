@@ -11,3 +11,6 @@ $ cd .chest
 $ npm install
 $ npm run submodule-init
 ```
+
+## Font
+https://github.com/adobe-fonts/source-code-pro
