@@ -10,6 +10,7 @@
   default = nothing
 [alias]
   pushf = push --force-with-lease
+  submu = submodule update --init --recursive
   cp = cherry-pick
   st = status
   cm = commit
