@@ -32,6 +32,7 @@
     "emoji-cli": "^1.0.0",
     "gtop": "^1.0.0",
     "http-server": "^0.11.1",
+    "source-code-pro": "git+https://github.com/adobe-fonts/source-code-pro.git#release",
     "tldr": "^3.2.5",
     "trash-cli": "^1.4.0"
   }
