@@ -23,17 +23,17 @@
   },
   "homepage": "https://github.com/watilde/dotfiles#readme",
   "dependencies": {
-    "@gitignorejs/gitignore-cli": "^0.1.0",
+    "@gitignorejs/gitignore-cli": "^0.1.1",
     "alert-cli": "0.0.2",
     "chest": "^1.2.3",
-    "clinic": "^2.2.1",
-    "core-validate-commit": "^3.9.0",
+    "clinic": "^4.1.0",
+    "core-validate-commit": "^3.12.0",
     "cowsay": "^1.4.0",
     "emoji-cli": "^1.0.0",
-    "gtop": "^1.0.0",
+    "gtop": "^1.0.1",
     "http-server": "^0.11.1",
     "source-code-pro": "2.30.1",
-    "tldr": "^3.2.6",
-    "trash-cli": "^1.4.0"
+    "tldr": "^3.2.7",
+    "trash-cli": "^3.0.0"
   }
 }
