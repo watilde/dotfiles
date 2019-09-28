@@ -2,6 +2,6 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-if [ -f ~/.bashtmp ]; then
-  . ~/.bashtmp
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
 fi
