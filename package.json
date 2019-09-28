@@ -7,9 +7,11 @@
   "scripts": {
     "submodule-init": "git submodule update --init --recursive",
     "submodule-update": "git submodule foreach git pull origin master",
-    "docker-build": "docker build -t 'chest:latest' .",
+    "docker-build:kali": "docker build -t 'kali:latest' Dockerfiles/Kali",
+    "docker-build:ubuntu": "docker build -t 'chest:latest' Dockerfiles/Ubuntu",
+    "docker-run:kali": "docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh kali:latest",
+    "docker-run:ubuntu": "docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh chest:latest",
     "docker-kill": "docker kill $(docker ps -q)",
-    "docker-run": "docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh chest:latest",
     "docker-rmi": "docker rmi -f $(docker images -q)"
   },
   "repository": {

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Kali
+alias kali='docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh kali:latest'
+
 # History
 alias h="history"
 
