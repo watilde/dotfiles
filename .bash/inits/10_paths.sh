@@ -12,6 +12,11 @@ if [ -e "$HOME/.nodebrew" ]; then
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
 
+if [ -e "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+fi
+
 # Ruby
 if [ -e "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
