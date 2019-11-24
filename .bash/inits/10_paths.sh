@@ -51,6 +51,11 @@ fi
 # Z
 source "$__CHEST/.bash/packages/z/z.sh"
 
+# L410 X server
+export DISPLAY=:0
+export XGD_SESSION_TYPE=X11
+export LIBGL_ALWAYS_INDIRECT=1
+
 # adb
 if [ -e "$HOME/Library/Android/sdk/platform-tools" ]; then
   export PATH=$PATH:"$HOME/Library/Android/sdk/platform-tools"

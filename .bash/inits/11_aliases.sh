@@ -9,6 +9,9 @@ alias h="history"
 # Grep
 alias g="grep"
 
+# Source
+alias reload="source ~/.bashrc"
+
 # List
 case "${OSTYPE}" in
 darwin*)
