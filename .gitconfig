@@ -6,7 +6,6 @@
 [core]
   editor = /usr/bin/vim
   whitespace = fix
-  precomposeUnicode = true
 [push]
   default = nothing
 [alias]
@@ -19,9 +18,10 @@
   b = branch
   r = remote
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
   required = true
+  process = git-lfs filter-process
 [fetch]
   recurseSubmodules = on-demand
 [log]

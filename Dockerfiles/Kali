@@ -1,3 +1,17 @@
-FROM kalilinux/kali-linux-docker
+# Build from Kali
+FROM kalilinux/kali-linux-docker:latest
+
+# Update images
+RUN apt update
+RUN apt full-upgrade
+
+# Setup Metasploit
+RUN service postgresql start
+RUN update-rc.d postgresql start
+RUN msfdb init
+RUN apt -y install \
+  gedit \
+  postgresql \
+  postgresql-contrib
 
 CMD ["bash"]

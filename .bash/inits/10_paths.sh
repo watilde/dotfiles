@@ -72,3 +72,8 @@ source "$__CHEST/.bash/packages/git-completion/git-completion.bash"
 if [ -e "/usr/local/opt/freetds@0.91" ]; then
   export PATH="/usr/local/opt/freetds@0.91/bin:$PATH"
 fi
+
+# Deno
+if [ -e "$HOME/.local/bin:$PATH" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
