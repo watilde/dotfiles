@@ -1,12 +1,13 @@
 .DS_Store
 
 
+.emacs.d/network-security.data
 .emacs.d/packages/*
 .emacs.d/auto-save-list/*
+.emacs.d/transient/*
 
 .vim/.netrwhist
 .vim/packages/*
 !.vim/packages/dein.vim
 
 node_modules
-
