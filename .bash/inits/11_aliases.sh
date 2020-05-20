@@ -87,5 +87,9 @@ if [ -e "$__CHEST/node_modules/.bin/cowsay" ]; then
   alias cowthink="$__CHEST/node_modules/.bin/cowthink"
 fi
 
+if [ -e "$__CHEST/node_modules/.bin/open" ]; then
+  alias open="$__CHEST/node_modules/.bin/open"
+fi
+
 alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
 alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
