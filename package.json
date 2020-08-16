@@ -28,7 +28,7 @@
     "@gitignorejs/gitignore-cli": "^0.1.1",
     "alert-cli": "0.0.2",
     "chest": "^1.2.3",
-    "clinic": "^5.0.1",
+    "clinic": "^6.0.3",
     "core-validate-commit": "^3.12.1",
     "cowsay": "^1.4.0",
     "emoji-cli": "^1.0.0",
