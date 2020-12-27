@@ -28,16 +28,16 @@
     "@gitignorejs/gitignore-cli": "^0.1.1",
     "alert-cli": "0.0.2",
     "chest": "^1.2.3",
-    "clinic": "^7.0.0",
+    "clinic": "^8.0.1",
     "core-validate-commit": "^3.12.1",
     "cowsay": "^1.4.0",
     "emoji-cli": "^1.0.0",
-    "gtop": "^1.0.2",
+    "gtop": "^1.1.0",
     "http-server": "^0.12.3",
     "open": "^7.3.0",
     "open-cli": "^6.0.1",
     "source-code-pro": "2.30.2",
     "tldr": "^3.3.6",
-    "trash-cli": "^3.1.0"
+    "trash-cli": "^4.0.0"
   }
 }
