@@ -5,7 +5,7 @@
 ```console
 $ cd ~
 $ git clone git@github.com:watilde/dotfiles.git .chest
-$ source .bashrc
+$ source .chest/.bashrc
 $ chest open
 $ cd .chest
 $ npm install
