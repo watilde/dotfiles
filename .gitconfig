@@ -30,3 +30,5 @@
 [status]
   submoduleSummary = true
   showUntrackedFiles = all
+[init]
+  defaultBranch = main
