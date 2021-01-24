@@ -91,5 +91,9 @@ if [ -e "$__CHEST/node_modules/.bin/open" ]; then
   alias open="$__CHEST/node_modules/.bin/open"
 fi
 
+if [ -e "$__CHEST/node_modules/.bin/yarn" ]; then
+  alias open="$__CHEST/node_modules/.bin/yarn"
+fi
+
 alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
 alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
