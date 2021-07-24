@@ -23,9 +23,9 @@ linux*)
 esac
 
 # open
-if [ -e "$__CHEST/node_modules/.bin/open-cli" ]; then
-  alias open="$__CHEST/node_modules/.bin/open-cli"
-fi
+# if [ -e "$__CHEST/node_modules/.bin/open-cli" ]; then
+#  alias open="$__CHEST/node_modules/.bin/open-cli"
+# fi
 
 # Rm
 if [ -e "$__CHEST/node_modules/.bin/trash" ]; then
