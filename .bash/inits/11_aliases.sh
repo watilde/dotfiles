@@ -22,11 +22,6 @@ linux*)
   ;;
 esac
 
-# open
-# if [ -e "$__CHEST/node_modules/.bin/open-cli" ]; then
-#  alias open="$__CHEST/node_modules/.bin/open-cli"
-# fi
-
 # Rm
 if [ -e "$__CHEST/node_modules/.bin/trash" ]; then
   alias rm="$__CHEST/node_modules/.bin/trash"
@@ -87,12 +82,13 @@ if [ -e "$__CHEST/node_modules/.bin/cowsay" ]; then
   alias cowthink="$__CHEST/node_modules/.bin/cowthink"
 fi
 
-if [ -e "$__CHEST/node_modules/.bin/open" ]; then
-  alias open="$__CHEST/node_modules/.bin/open"
+if [ -e "$__CHEST/node_modules/.bin/yarn" ]; then
+  alias yarn="$__CHEST/node_modules/.bin/yarn"
 fi
 
-if [ -e "$__CHEST/node_modules/.bin/yarn" ]; then
-  alias open="$__CHEST/node_modules/.bin/yarn"
+# open
+if [ -e "$__CHEST/node_modules/.bin/open-cli" ]; then
+ alias open="$__CHEST/node_modules/.bin/open-cli"
 fi
 
 alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
