@@ -91,5 +91,6 @@ if [ -e "$__CHEST/node_modules/.bin/open-cli" ]; then
  alias open="$__CHEST/node_modules/.bin/open-cli"
 fi
 
+
 alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
 alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'

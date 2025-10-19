@@ -1,0 +1,1 @@
+export PIPENV_VERBOSITY=-1
