@@ -27,7 +27,7 @@
   "dependencies": {
     "@gitignorejs/gitignore-cli": "^0.1.1",
     "alert-cli": "0.0.2",
-    "chest": "^0.0.0",
+    "chest": "^1.2.3",
     "clinic": "^0.6.2",
     "core-validate-commit": "^3.12.1",
     "cowsay": "^1.4.0",

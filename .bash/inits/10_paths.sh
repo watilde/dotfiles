@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Homebrew
+if [ -e "/opt/homebrew" ]; then
+ eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # ccache
 if [ -x "$(command -v ccache)" ]; then
   export USE_CCACHE=1
@@ -8,10 +13,6 @@ if [ -x "$(command -v ccache)" ]; then
 fi
 
 # Node.js
-if [ -e "$HOME/.nodebrew" ]; then
-  export PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
-
 if [ -e "$HOME/.nvm" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -25,10 +26,24 @@ if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
+#Java
+if [ -e "$HOME/.sdkman" ]; then
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  
+  function cd() {
+    builtin cd "$@"
+    if [[ -f .sdkmanrc ]]; then
+      sdk env
+    fi
+  }
+fi
+
 # Python
 if [ -e "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
 
@@ -79,3 +94,4 @@ fi
 if [ -e "$HOME/.local/bin:$PATH" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
+
