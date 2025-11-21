@@ -1,3 +1,5 @@
 #!/bin/bash
 source $HOME/.bash/init.sh
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
