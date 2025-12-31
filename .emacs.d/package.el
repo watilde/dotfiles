@@ -1,6 +1,7 @@
 ;; list the packages
 (setq package-list '(
   cc-mode
+  company-mode
   ess
   flycheck
   haskell-mode
@@ -10,10 +11,12 @@
   neotree
   python-mode
   rainbow-delimiters
+  rjsx-mode
   rust-mode
   sass-mode
   swift-mode
-  tabbar))
+  tabbar
+  tide))
 
 ;; Access Marmalade and MELPA repositories, in addition to GNU ELPA
 (setq package-archives

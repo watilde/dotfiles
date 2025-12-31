@@ -1,0 +1,13 @@
+(add-to-list 'auto-mode-alist '("\.cc$" . cc-mode))
+(add-to-list 'auto-mode-alist '("\.hs$" . haskell-mode))
+;; (add-to-list 'auto-mode-alist '("\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\.js\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\.jsx\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\.ts\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\.tsx\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\.py$" . python-mode))
+(add-to-list 'auto-mode-alist '("\.rs$" . rust-mode))
+(add-to-list 'auto-mode-alist '("\.scss$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\.sass$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\.swift$" . swift-mode))
+
