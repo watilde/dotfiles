@@ -1,6 +1,5 @@
 "" basic
 set nowrap
-set nocompatible
 set scrolloff=5
 set nobackup
 set autoread
@@ -20,8 +19,6 @@ set guioptions+=a
 set ttymouse=xterm2
 
 " Syntax
-filetype plugin on
-syntax on
 set spell
 
 "" display some meta infos
@@ -42,11 +39,6 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
-if has("autocmd")
-  filetype plugin on
-  filetype indent on
-endif
 
 "" encoding
 set ffs=unix
