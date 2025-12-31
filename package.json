@@ -38,8 +38,7 @@
     "open-cli": "^8.0.0",
     "source-code-pro": "^2.42.0",
     "tldr": "^3.4.0",
-    "trash-cli": "^7.0.0",
-    "yarn": "^1.22.22"
+    "trash-cli": "^7.0.0"
   },
   "overrides": {
     "d3-color": "3.1.0",
