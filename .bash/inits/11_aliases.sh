@@ -10,26 +10,36 @@ _def_alias() {
 }
 
 # Kali
-alias kali='docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh kali:latest'
+if command_exists docker; then
+  alias kali='docker run -it -v ~/Development:/root/Development -v ~/.ssh:/root/.ssh kali:latest'
+fi
 
 # History
 alias h="history"
 
 # Grep
-alias g="grep"
+if command_exists rg; then
+  alias g="rg"
+  alias grep="rg"
+fi
+
+# Cat
+if command_exists bat; then
+  alias cat="bat"
+fi
 
 # Source
 alias reload="source ~/.bashrc"
 
 # List
-case "${OSTYPE}" in
-darwin*)
-  alias ls="ls -G -h"
-  ;;
-linux*)
-  alias ls='ls --color -h'
-  ;;
-esac
+# eza is a modern replacement for ls
+# https://github.com/eza-community/eza
+if command_exists eza; then
+  alias ls="eza --icons"
+  alias l="eza -l --icons"
+  alias la="eza -la --icons"
+  alias lt="eza -T --icons" # tree view
+fi
 
 # Node-based command aliases
 _def_alias "trash" "rm"
@@ -47,5 +57,7 @@ _def_alias "cowthink" "cowthink"
 _def_alias "yarn" "yarn"
 _def_alias "open-cli" "open"
 
-alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
-alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+if [ -x "/usr/local/opt/llvm/bin/clang" ]; then
+  alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+  alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+fi
