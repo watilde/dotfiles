@@ -35,10 +35,10 @@ alias reload="source ~/.bashrc"
 # eza is a modern replacement for ls
 # https://github.com/eza-community/eza
 if command_exists eza; then
-  alias ls="eza --icons"
-  alias l="eza -l --icons"
-  alias la="eza -la --icons"
-  alias lt="eza -T --icons" # tree view
+  alias ls="eza"
+  alias l="eza -l"
+  alias la="eza -la"
+  alias lt="eza -T" # tree view
 fi
 
 # Node-based command aliases
