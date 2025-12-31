@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # Homebrew
-if [ -e "/opt/homebrew" ]; then
+if [ -e "/opt/homebrew/bin/brew" ]; then
  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -e "/usr/local/bin/brew" ]; then
+ eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 # ccache
 if [ -x "$(command -v ccache)" ]; then
   export USE_CCACHE=1
   export CCACHE_DIR="$HOME/.ccache"
-  export set CC='ccache gcc'
+  export CC='ccache gcc'
 fi
 
 # Node.js
@@ -31,12 +33,12 @@ if [ -e "$HOME/.sdkman" ]; then
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
   
-  function cd() {
-    builtin cd "$@"
+  _sdkman_post_cd() {
     if [[ -f .sdkmanrc ]]; then
       sdk env
     fi
   }
+  post_cd_hooks+=( _sdkman_post_cd )
 fi
 
 # Python
@@ -53,12 +55,9 @@ if [ -e "$HOME/.cargo/bin" ]; then
 fi
 
 # Go
-if [ -e "$PATH:/usr/local/go/bin" ]; then
+if [ -d "/usr/local/go/bin" ]; then
   export PATH=$PATH:/usr/local/go/bin
 fi
-
-# depot_tools
-export PATH="$HOME/.bash/packages/depot_tools:$PATH"
 
 # Editor
 if [ -x "$(command -v emacs)" ]; then
@@ -74,10 +73,10 @@ export XGD_SESSION_TYPE=X11
 export LIBGL_ALWAYS_INDIRECT=1
 
 # adb
-if [ -e "$HOME/Library/Android/sdk/platform-tools" ]; then
+if [ -d "$HOME/Library/Android/sdk/platform-tools" ]; then
   export PATH=$PATH:"$HOME/Library/Android/sdk/platform-tools"
 fi
-if [ -e "$HOME/Library/Android/sdk/tools/" ]; then
+if [ -d "$HOME/Library/Android/sdk/tools/" ]; then
   export PATH=$PATH:"$HOME/Library/Android/sdk/tools/"
 fi
 
@@ -91,7 +90,7 @@ if [ -e "/usr/local/opt/freetds@0.91" ]; then
 fi
 
 # Deno
-if [ -e "$HOME/.local/bin:$PATH" ]; then
+if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 

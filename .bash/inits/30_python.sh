@@ -19,15 +19,11 @@ mkvenv() {
 }
 
 # Automatic virtualenv sourcing
-function auto_pipenv_shell {
+_pipenv_post_cd() {
     if [ ! -n "$VIRTUAL_ENV" ]; then
         if [ -f "Pipfile" ] ; then
             workon
         fi
     fi
 }
-function cd {
-    builtin cd "$@"
-    auto_pipenv_shell
-}
-auto_pipenv_shell
+post_cd_hooks+=( _pipenv_post_cd )
