@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+if [[ ! "$PATH" == */home/moku/.local/bin* ]]; then
+  PATH="/home/moku/.local/bin:${PATH}"
 fi
 
 eval "$(fzf --bash)"
