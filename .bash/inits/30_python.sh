@@ -6,7 +6,7 @@ workon() {
     then
         source "$(pipenv --venv)/bin/activate"
     else
-        source "~/.virtualenvs/$1/bin/activate"
+        source "$HOME/.virtualenvs/$1/bin/activate"
     fi
 }
 

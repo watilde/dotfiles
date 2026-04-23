@@ -1,6 +1,7 @@
 [user]
   email = daijiro.wachi@gmail.com
   name = Daijiro Wachi
+  signingkey = C2EF3FD5FDD73048817BFD4239702A03DE4DCC2E
 [color]
   ui = auto
 [core]
@@ -28,10 +29,13 @@
 [log]
   abbrevCommit = true
   follow = true
+  showSignature = true
 [status]
   submoduleSummary = true
   showUntrackedFiles = all
 [init]
   defaultBranch = main
 [pull]
-	rebase = false
+  rebase = false
+[commit]
+  gpgsign = true

@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/moku/.local/bin* ]]; then
-  PATH="/home/moku/.local/bin:${PATH}"
+if [[ ! "$PATH" == *"$HOME/.local/bin"* ]]; then
+  PATH="$HOME/.local/bin:${PATH}"
 fi
 
 eval "$(fzf --bash)"

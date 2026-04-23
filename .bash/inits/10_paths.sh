@@ -8,7 +8,7 @@ elif [ -e "/usr/local/bin/brew" ]; then
 fi
 
 # ccache
-if [ -x "$(command -v ccache)" ]; then
+if command_exists ccache; then
   export USE_CCACHE=1
   export CCACHE_DIR="$HOME/.ccache"
   export CC='ccache gcc'
@@ -31,8 +31,7 @@ fi
 #Java
 if [ -e "$HOME/.sdkman" ]; then
   export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-  
+
   _sdkman_post_cd() {
     if [[ -f .sdkmanrc ]]; then
       sdk env

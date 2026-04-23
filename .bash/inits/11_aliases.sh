@@ -42,7 +42,6 @@ if command_exists eza; then
 fi
 
 # Node-based command aliases
-_def_alias "trash" "rm"
 _def_alias "http-server" "server"
 _def_alias "chest" "chest"
 _def_alias "emoji" "emoji"
