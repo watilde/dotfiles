@@ -29,7 +29,6 @@
 [log]
   abbrevCommit = true
   follow = true
-  showSignature = true
 [status]
   submoduleSummary = true
   showUntrackedFiles = all
