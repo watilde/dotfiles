@@ -93,3 +93,11 @@ if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Git
+if [[ "$HOSTNAME" == "MacBook-Pro-4.local" ]]; then
+  ln -sf ~/.gitconfig.MacBook-Pro-4.local ~/.gitconfig_local
+elif [[ "$HOSTNAME" == "My-Desktop-PC" ]]; then
+  ln -sf ~/.gitconfig.desktop ~/.gitconfig_local
+else
+  touch ~/.gitconfig_local
+fi

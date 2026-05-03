@@ -1,7 +1,8 @@
 [user]
   email = daijiro.wachi@gmail.com
   name = Daijiro Wachi
-  signingkey = C2EF3FD5FDD73048817BFD4239702A03DE4DCC2E
+[include]
+    path = ~/.gitconfig_local
 [color]
   ui = auto
 [core]
